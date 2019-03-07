@@ -1,0 +1,24 @@
+<h2 class="center">Planets</h2>
+<div class="row">
+  <div class="col-6">
+  <button type ="button" class="btn btn-primary" id="toggle">Show Form</button>
+    <ul class="list-group" id="planets-list">
+      <% @planets.each do |planet| %>
+        <li
+          class="planet-item list-group-item"
+          data-id=<%= planet.id %>
+          data-name="<%= planet.name %>"
+        >
+          <%= planet.name %> 
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="row" id="citizen-list">
+    <div class="col">
+      <h3 id="planet">Citizens of World</h2>
+      <ul class="list-group" id="citizens">
+      </ul>
+    </div>
+  </div>
+</div>
