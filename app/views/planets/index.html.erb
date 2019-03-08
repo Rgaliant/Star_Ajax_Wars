@@ -4,13 +4,14 @@
   <button type ="button" class="btn btn-primary" id="toggle">Show Form</button>
     <ul class="list-group" id="planets-list">
       <% @planets.each do |planet| %>
-        <li
-          class="planet-item list-group-item"
+        <h4
+          class="planet-item list-group-item header"
           data-id=<%= planet.id %>
           data-name="<%= planet.name %>"
         >
           <%= planet.name %> 
-        </li>
+        </h4>
+        <%= render partial: 'planet', locals: { planet: planet } %>
       <% end %>
     </ul>
   </div>

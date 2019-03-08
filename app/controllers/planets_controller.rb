@@ -6,10 +6,11 @@ class PlanetsController < ApplicationController
   end
 
   def show
+    render partial: 'planet', locals: { planet: @planet }
   end
 
   def form
-    @planet = Planet.new
+    @planet = params[:id] ? Planet.find(params[:id]) : Planet.new
     render partial: 'form'
   end
 
